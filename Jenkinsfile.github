@@ -48,11 +48,9 @@ pipeline {
 
     stages {
         stage("Build") {
-            stage('Image') {
-                steps {
-                    script {
-                        sh "make docker"
-                    }
+            steps {
+                script {
+                    sh "make docker"
                 }
             }
         }
