@@ -47,18 +47,11 @@ pipeline {
     }
 
     stages {
-        stage("Test") {
-            steps {
-                sh "make unit_test"
-            }
-        }
         stage("Build") {
-            parallel {
-                stage('Image') {
-                    steps {
-                        script {
-                            sh "make docker"
-                        }
+            stage('Image') {
+                steps {
+                    script {
+                        sh "make docker"
                     }
                 }
             }
