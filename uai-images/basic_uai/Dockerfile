@@ -27,5 +27,3 @@ COPY zypper.sh /
 RUN --mount=type=secret,id=ARTIFACTORY_READONLY_USER --mount=type=secret,id=ARTIFACTORY_READONLY_TOKEN ./zypper.sh && rm /zypper.sh
 
 ENV LC_ALL=C.UTF-8 LANG=C.UTF-8
-
-ENTRYPOINT /usr/bin/uai-ssh.sh
