@@ -57,7 +57,7 @@ pipeline {
         stage('Publish') {
             steps {
                 script {
-                    publishCsmDockerImage(image: env.BASIC_UAI_IMG_NAME, tag: env.VERSION, isStable: env.IS_STABLE,
+                    publishCsmDockerImage(artifactoryRepo: "uan-docker", image: env.BASIC_UAI_IMG_NAME, tag: env.VERSION, isStable: env.IS_STABLE,
                                           snykTargetFile: "${WORKSPACE}/uai-images/basic_uai/Dockerfile"
                     )
                 }
